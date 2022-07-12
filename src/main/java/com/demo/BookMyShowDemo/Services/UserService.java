@@ -46,6 +46,9 @@ public class UserService {
         log.print("new user added");
         return userRequest;
     }
+    public User adduser(User user){
+       return userRepository.save(user);
+    }
 
     public UserRequest updateUser(int id,UserRequest userRequest){
         try{
