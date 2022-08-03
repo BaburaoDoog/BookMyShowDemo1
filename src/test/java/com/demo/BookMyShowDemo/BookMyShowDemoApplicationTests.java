@@ -34,6 +34,12 @@ class BookMyShowDemoApplicationTests {
 		Assertions.assertEquals(user,userService.adduser(user));
 		Assertions.assertEquals(user.getEmail(),"baburao@ayu.health");
 	}
-
-
+	@Test
+	@Order(2)
+	public void saveUser1() {
+		User user=new User(1,"Baburao","baburao@ayu.health");
+		when(userRepository.save(user)).thenReturn(user);
+		Assertions.assertEquals(user,userService.adduser(user));
+		Assertions.assertEquals(user.getEmail(),"baburao@ayu.health");
+	}
 }
